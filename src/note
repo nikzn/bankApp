@@ -1,0 +1,55 @@
+
+        ANGULAR     
+
+
+
+1. Modules - to import libraries - root Module - App Module
+
+2. Component - to get {HTML,CSS,TS}
+
+3.Data Binding - data sharing between  TS and HTML
+
+    3.1 One Way Binding - Data sharing only in one direction
+
+        3.1.1 Component to View
+         
+            3.1.1.1  String Interpolation - syntax :{{variable-name}}
+
+            3.1.1.2 Property Binding - syntax:[attribute-name]="property-name"
+
+
+        3.1.2 View to Component
+
+            3.1.2.1  Event Binding - syntax:(event-name)="function-name()" 
+
+            3.1.2.2  Event Binding using $event - syntax:(event-name)="function-name($event)"
+
+            3.1.2.3 Template Referencing variable - syntax: #referncing-variable-name
+
+
+
+    3.2 Two Way Binding - Data sharing in Both direction
+
+        3.2.1 Binding using ngModel - 
+
+            -import FormsModule in AppModule
+
+            syntax : [(ngModel)]= "variable-name" ,variable-name it should define in ts file
+
+
+
+4.    ngSubmit - to submit the form , syntax:(ngsumbit)="function-call"
+
+5.    set path for an HTML page - app.routing.module.ts , syntax:{path.Component}
+
+6.    Dependency Injection - to share data between dependent classes
+
+7.    Angular Services - to create service - ng g s service_name
+
+
+
+
+
+
+
+
