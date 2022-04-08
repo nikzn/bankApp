@@ -1,1 +1,21 @@
-<p>dashboard works!</p>
+
+<div class="row">
+    <div class="col-6">
+<h1>Deposit</h1>
+<form (ngSubmit)="deposit()" >
+
+    <input type="text" placeholder="Account Number" name="accno" [(ngModel)]="accno" id="d_accno"><br>
+    <input type="password" placeholder="Password" [(ngModel)]="pswd" name="pswd" id="d_pswd"><br>
+    <input type="text"  placeholder="Enter amount" name="amount" [(ngModel)]="amount" id="d_amount" ><br>
+    <input type="submit" placeholder="submit">
+</form>
+</div>
+<div class="col-6">
+    <h1>withdrawal</h1>
+    <form (ngSubmit)="withdraw()" >
+        <input type="text" placeholder="Account Number" name="accno1" [(ngModel)]="accno1" id="d_accno1"><br>
+        <input type="password" placeholder="Password" name="pswd1" [(ngModel)]="pswd1" id="d_pswd2"><br>
+        <input type="text"  placeholder="Enter amount" name="amount1" [(ngModel)]="amount1" id="d_amount3" ><br>
+        <input type="submit" placeholder="submit">
+    </form>
+</div>

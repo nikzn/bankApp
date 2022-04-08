@@ -32,30 +32,19 @@ export class LoginComponent implements OnInit {
 
 //   //login using event binding
   login() {
-    var accno = this.accno
-    console.log(accno);
 
+    var accno = this.accno
     var pswd = this.pswd
 
-    let database = this.ds.database
+   
+    const result =this.ds.login(accno,pswd)
 
-    if (accno in database) {
-
-      if (pswd == database[accno]["pswd"]) 
-      {
-
-        this.router.navigateByUrl("dashboard")
-      }
-      else {
-        alert("Incorrect password")
-      }
-    }
-      else
-      {
-      alert("User does not exists")
-  }
-
-    }
+if (result) {
+ alert("login successful")
+  this.router.navigateByUrl("dashboard")
+  
+}
+}  
 }
 
 

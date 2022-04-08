@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-dark ">
-    <a class="navbar-brand" href="#" style="color:rgb(85, 98, 237);"><b>&#169; HAFC Bank Pvt.Ltd </b></a>
+    <a class="navbar-brand" href="#"><b>&#169; HAFC Bank Pvt.Ltd </b></a>
     <span class="quote text-light">Giving you freedom...</span>
 </nav>
 
@@ -21,7 +21,7 @@
                         <!-- template referncing variable - #acno -->
                         <!-- two way binding using ngModel -->
 
-                        <input type="text" name="accno" [(ngModel)]="accno" class="form-control" [placeholder]="accnum"
+                        <input type="text" name="accno" [(ngModel)]="accno" class="form-control" placeholder="accnum"
                             id="login_accno" required>
 
                     </div>
@@ -36,11 +36,11 @@
 
                     <div class="form-group">
                         <input type="submit" value="Login" class="btn float-right login_btn "
-                            style="width:50%">
+                            >
                     </div>
                 </form>
             </div>
-            <p style="color:white;align-items:baseline;">Not a user? <a routerLink="register">Register</a></p>
+            <p>Not a user? <a routerLink="register">Register</a></p>
         </div>
     </div>
 </div>
