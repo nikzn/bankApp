@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-dark ">
-    <a class="navbar-brand" href="#" style="color:rgb(85, 98, 237);"><b>&#169; HAFC Bank Pvt.Ltd </b></a>
+    <a class="navbar-brand" href="#" ><b>&#169; HAFC Bank Pvt.Ltd </b></a>
     <span class="quote text-light">Giving you freedom...</span>
 </nav>
 
@@ -12,15 +12,16 @@
             </div>
             
             <div class="card-body">
-                <form (ngSubmit)="register()">
+                <form [formGroup]="registerForm" (ngSubmit)="register()">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
                         <!-- (change)="pswdChange($event)" -->
-                        <input type="text" name="accname" [(ngModel)]="accname" class="form-control" placeholder="accname"
+                        <input type="text" name="accname" formControlName="accname" class="form-control" placeholder="accname"
                             id="login_accname" required>
                     </div>
+                    <div *ngIf="(this.registerForm.get('accname')?.touched||this.registerForm.get('accname')?.dirty)&&this.registerForm.get('accname')?.errors" >invalid username</div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -29,7 +30,7 @@
                         <!-- template referncing variable - #acno -->
                         <!-- two way binding using ngModel -->
 
-                        <input type="text" name="accno" [(ngModel)]="accno" class="form-control" placeholder="accno"
+                        <input type="text" name="accno" formControlName="accno" class="form-control" placeholder="accno"
                             id="login_accno" required>
 
                     </div>
@@ -38,19 +39,19 @@
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
                         <!-- (change)="pswdChange($event)" -->
-                        <input type="password" name="pswd" [(ngModel)]="pswd" class="form-control" placeholder="password"
+                        <input type="password" name="pswd" formControlName="pswd" class="form-control" placeholder="password"
                             id="login_password" required>
                     </div>
 
                     <div class="form-group">
                         <input type="submit" value="register" class="btn float-right login_btn "
-                            style="width:50%">
+                           >
                     </div>
 
                 </form>
 
             </div>
-            <p style="color:white;align-items:baseline;">Existing user? <a routerLink="">Log In</a></p>
+            <p>Existing user? <a routerLink="">Log In</a></p>
         </div>
     </div>
 </div>

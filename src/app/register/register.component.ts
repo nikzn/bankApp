@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -9,22 +10,26 @@ import { DataService } from '../services/data.service';
 })
 export class RegisterComponent implements OnInit {
 
-  accname=""
-  accno=""
-  pswd=""
+  registerForm = this.fb.group({
+    accname:['',[Validators.required,Validators.pattern('[a-zA-Z ]*')]],
+    accno:[''],                
+    pswd:['']
 
-  constructor(private db:DataService,private router:Router) { }
+  })
+
+  constructor(private db:DataService,private router:Router,private fb:FormBuilder) { }
 
   ngOnInit(): void {
   }
 register()
 {
  
-  var accno = this.accno
-  var accname = this.accname
-  var pswd = this.pswd
-  const result = this.db.register(accname,accno,pswd)
-  
+  var accno = this.registerForm.value.accno
+  var accname = this.registerForm.value.accname
+  var pswd = this.registerForm.value.pswd
+  if(this.registerForm.valid)
+  {
+    const result = this.db.register(accname,accno,pswd)
   if (result) {
     alert("successfully registed")
     this.router.navigateByUrl("")
@@ -34,5 +39,9 @@ register()
     alert("account exists")
   }
 }
-
+else
+{
+  alert("invalid form")
+}
+}
 }
